@@ -1,0 +1,8 @@
+{
+  "name": "webdev-brad-travel-site",
+  "version": "1.0.0",
+  "description": "Study project to use node.js tools for building and testing",
+  "dependencies": {
+    "jquery": "^3.2.1"
+  },
+}
