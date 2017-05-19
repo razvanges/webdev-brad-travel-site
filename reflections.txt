@@ -1,0 +1,51 @@
+npm install		<- takes the existing package.json and downloads the required packages defined there
+
+
+sudo npm install gulp-cli --global: installs gulp globally (requires sudo)
+
+#######################
+## Initialize project #
+#######################
+npm init 	initialize the working project directory (creates the package.json file)
+npm install --save-dev gulp
+
+touch gulpfile.js
+	var gulp = require('gulp');
+
+
+############################################
+## .gitignore - ignore the generated files #
+############################################
+touch .gitignore
+echo "#.gitignore\node_modules\n" >> .gitignore
+git add .gitignore
+git commit -m 'Add .gitignore so that new devs can import it into their new projects and have all the ignored files configured'
+
+
+###########################################
+## gulp watch - Watch project for changes #
+###########################################
+npm install --save-dev gulp-watch
+add to the gulpfile.js
+	var watch = require('gulp-watch');
+
+created snippets in ~/.config/sublime-text-3/Packages/User/
+gulp.task('watch', function() {
+	watch('${2:./app/index.html}', function() {
+		gulp.start('html');
+	});
+
+	watch('${4:./app/assets/styles/**/*.css}', function() {
+		gulp.start('css');
+	});
+});
+
+
+###############
+## gulp pipes #
+###############
+gulp.src | pipe | dest
+return - makes async functions to be synchronized with the code (we'll wait for them to finish)
+
+npm install --save-dev gulp-postcss
+npm install --save-dev autoprefixer
